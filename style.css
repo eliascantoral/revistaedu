@@ -15,3 +15,97 @@ Tema inicial.
 
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{font-size:100%;font:inherit;padding:0;border:0;margin:0;vertical-align:baseline}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}.clear{clear:both}
 .sticky{}.bypostauthor{}.wp-caption{}.wp-caption-text{}.gallery-caption{}.alignright{}.alignleft{}.aligncenter{}
+/*
+.menu-home li ul{
+    display: none;
+    z-index: 100px;
+}
+.menu-home li{
+    float: left;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.menu-home li:hover ul{
+    display: block;
+}
+*/
+#menu-container{
+    background: #48c3d6 !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    margin: 0px !important;
+    
+}
+.menu-home{
+	background:#48c3d6;
+	margin-top:0px;
+        margin-bottom: 0px;
+	position: relative;
+}
+.menu-home ul {
+	list-style:none;
+	padding:0;
+	margin:0;
+	overflow:hidden;
+}
+ 
+.menu-home > ul > li {
+	float:left;
+        height: 100%;
+}
+
+.menu-home ul li a {
+	text-decoration:none;
+	color:#000;
+	display:block;
+	padding:10px 20px;
+}
+ 
+.menu-home ul li a:hover {
+	background:#ed2938;
+}
+ 
+.menu-home > ul > li:hover ul {
+	display:table;
+}
+ 
+/*Submenu*/
+.menu-home ul li ul {
+	width:1000px;
+	position: absolute;
+	left:0;
+	background:#ed2938;
+	box-sizing:border-box;
+	display:none;
+}
+ 
+.menu-home ul li ul{
+	width:20%;
+	display:table-cell;
+	//border-right:1px solid rgba(255,255,255,.5);
+	box-sizing:border-box;
+}
+ 
+.menu-home ul li ul:last-child {
+	border:none;
+}
+ 
+.menu-home ul li ul li a {
+	color:#fff;
+	padding:10px 20px;
+}
+
+.menu-home ul li ul li a:hover {
+	background:#f15460;
+}
+ 
+.menu-home ul li ul li a {
+	color:#fff;
+}
+ 
+.menu-home ul li ul li a:hover {
+	color:#000;
+}
+.menu-home ul li ul{
+    display: none;
+}

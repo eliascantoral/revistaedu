@@ -64,3 +64,6 @@ return count( $comments_by_type['comment'] );
 return $count;
 }
 }
+
+
+include_once 'functions/function.php';
