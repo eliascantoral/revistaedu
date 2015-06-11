@@ -6,62 +6,64 @@
  * and open the template in the editor.
  */
 	/**************************************************************************************************************************/	
-	function init_vars(){
-		session_start();		
-	}
-	function get_variable($var){
-		switch($var){
-			case "home": return "http://localhost/aemcode/";
-			case "ajax": return "?page_id=38";
-			default:{return "";}
+function print_array($array){
+	echo "<pre>";
+	print_r($array);
+	echo "</pre>";
+}
+function array_contain($what, $where, $pos){		
+	for($i=0; $i<sizeof($where);$i++){
+		if($pos==null){				
+			if($what == $where[$i]) return $i+1;
+		}else{
+			if($what == $where[$i][$pos-1]) return $i+1;
 		}
+		
 	}
-	function is_login(){
-		$user = false;
-		if(isset($_SESSION["userid"])){$user = $_SESSION["userid"];}
-		return $user;
-	}
-	function create_log($object_id){
-		$key = isset($_SESSION["key"])?$_SESSION["key"]:create_sessionkey();
-		$user = false;
-		$rate = 0;
-		include_once("backend/backend.php");
-		$backend = new backend();	
-		//test_data();
-		return $backend->create_log($object_id, $key, $user, $rate);
-	}
-	
-	function create_sessionkey(){
-		$_SESSION["key"]= time() . random_text();
-	}
-	function kill_sessionkey(){		
-		$_SESSION["key"] = false;
-	}
-	function get_sessionkey(){
-		if(!isset($_SESSION["key"])){
-			create_sessionkey();
+	return false;
+}
+function minimizer_string($cadena){
+	$conv = array("á"=>"a","é"=>"e","í"=>"i","ó"=>"o","ú"=>"u","Á"=>"A","É"=>"E","Í"=>"I","Ó"=>"O","Ú"=>"U");
+	$tofind = "áéíóúÁÉÍÓÚ";
+	$replac = "aeiouAEIOU";
+	return(strtr($cadena,$conv));
+}	
+function get_category_parent($term_id){
+		$parent = get_term_by('id',  $term_id, 'area');
+		$counter = 0;
+		while($parent->parent!='0'&& $counter < 5){
+			$parent = get_term_by('id',  $parent->parent, 'area');
+			$counter++;
 		}
-		return $_SESSION["key"];	
-	}
-	function random_text($size = 10){
-		$text = "";
-		$characters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ/*-+_";
-		for($i=0;$i<$size;$i++){
-			$text.=$characters[mt_rand(0, strlen($characters))];			
+		return $parent->term_id;
+}
+
+
+
+function the_excerpt_max_charlength($postid, $charlength) {
+	$excerpt = get_field('descripcion', $postid);
+	$charlength++;
+	$return = "";
+	if ( mb_strlen( $excerpt ) > $charlength ) {
+		$subex = mb_substr( $excerpt, 0, $charlength - 5 );
+		$exwords = explode( ' ', $subex );
+		$excut = - ( mb_strlen( $exwords[ count( $exwords ) - 1 ] ) );
+		if ( $excut < 0 ) {
+			$return.= mb_substr( $subex, 0, $excut );
+		} else {
+			$return.= $subex;
 		}
-		return $text;
+		$return.= '[...]';
+	} else {
+		$return.= $excerpt;
 	}
-	function array_contain($where, $what, $pos=false){		
-		for($i=0;$i<sizeof($where);$i++){
-			if($pos===false){
-				if($where[$i]==$what) return $i+1;			
-			}else{
-				if($where[$i][$pos]==$what) return $i+1;
-			}			
-		}
-		return false;
-	}
+	return $return;
+}
 	
 /******************************************************************************************************/
-		
+    include_once 'blocks/sidebar.php';
+    include_once 'blocks/autor.php';
+    include_once 'blocks/recurso.php';
+    include_once 'blocks/enlace.php';
+    include_once 'blocks/articulo.php';
 ?>
