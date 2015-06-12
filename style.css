@@ -29,6 +29,14 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
     display: block;
 }
 */
+.clear{
+    clear: both;
+}
+.page_title{
+    color:#ed2938;
+    text-align: center;
+}
+
 #menu-container{
     background: #48c3d6 !important;
     padding-top: 0px !important;
@@ -42,77 +50,6 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
         margin-bottom: 0px;
 	position: relative;
 }
-/*.menu-home ul {
-	list-style:none;
-	padding:0;
-	margin:0;
-	overflow:hidden;
-}
- 
-.menu-home > ul > li {
-	float:left;
-        height: 100%;
-}
-
-.menu-home ul li a {
-	text-decoration:none;
-	color:#000;
-	display:block;
-	padding:10px 20px;
-}
- 
-.menu-home ul li a:hover {
-	background:#ed2938;
-}
- 
-.menu-home > ul > li:hover ul {
-	display:table;
-}
- 
-/*Submenu*/
-/*.menu-home ul li ul {
-	width:20%;
-	position: absolute;
-	background:#ed2938;
-	box-sizing:border-box;
-	display:none;
-} 
-.menu-home ul li ul{
-	width:200px;
-	display:table-cell;
-	//border-right:1px solid rgba(255,255,255,.5);
-	box-sizing:border-box;
-}
- 
-.menu-home ul li ul:last-child {
-	border:none;
-}
- 
-.menu-home ul li ul li a {
-	color:#fff;
-	padding:10px 20px;
-}
-
-.menu-home ul li ul li a:hover {
-	background:#f15460;
-}
- 
-.menu-home ul li ul li a {
-	color:#fff;
-}
- 
-.menu-home ul li ul li a:hover {
-	color:#000;
-}
-.menu-home ul li ul{
-    display: none;
-}*/
-/*****************************************************************/
-/*Sub-submenu
-.menu-home ul li ul li ul{
-    
-}*/
-
 .menu-home ul {
 	list-style:none;
 	padding:0;
@@ -221,4 +158,54 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 .autor-box a{
     color: #FFF !important;
     text-decoration: none !important;
+}
+/*************************************/
+.recurso-box{
+    float: left;
+    width: 280px;
+    padding: 10px;
+    background: #48c3d6;   
+    color: #FFF;
+    margin-top: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+
+.alignleft{
+    float: left;
+    margin: 10px;
+}
+
+
+
+/*************************************************************************/
+.content-box{
+    margin-top: 20px;
+    padding: 10px;   
+    background: #48c3d6;   
+    color: #FFF;
+}
+.content-box a{
+    color: #FFF !important;
+    text-decoration: none !important;
+}
+.content-box input{
+    color: #000;
+}
+.content-box textarea{
+    color: #000;
+}
+.content-box .btn{
+    color: #FFF;
+}
+/**************************************************************************/
+#footer{
+    margin-top: 10px;
+    min-height: 50px;
+    height: auto;
+    background: #ed2938;
+    padding: 10px;
+    color: #FFF;
 }
