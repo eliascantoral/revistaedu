@@ -100,7 +100,15 @@
                                                 'walker'          => ''
                                         );
                                         wp_nav_menu( $defaults );
-                                ?>        
+                                ?>
+        <ul class="navbar-form navbar-left">
+            <li><a href="">REVISTAS</a>
+                <?php get_revistalist();?>
+            </li>
+            <li><a href="">TEMAS</a>
+               <?php get_categoriaslist();?>
+            </li>
+        </ul>        
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>       

@@ -66,4 +66,6 @@ function the_excerpt_max_charlength($postid, $charlength) {
     include_once 'blocks/recurso.php';
     include_once 'blocks/enlace.php';
     include_once 'blocks/articulo.php';
+    include_once 'blocks/revista.php';
+    include_once 'blocks/categorias.php';
 ?>

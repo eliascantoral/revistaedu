@@ -11,7 +11,7 @@ function get_mysidebar(){
 <div id="sidebar_header">
     <form class="searchform form-inline">
         <div class="form-group">
-            <label for="search_text"><h4>Buscar</h4></label> <input type="text" id="search_text" class="form-control" name="search_text" placeholder="Buscar">
+            <label for="search_text"><h4>Buscar</h4></label> <input type="text" id="search_text" class="form-control" name="s" placeholder="Buscar" value="<?php echo isset($_GET["s"])?$_GET["s"]:""?>">
         </div>
     </form>
 </div>
